@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Park</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ece9e6, #ffffff);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        header {
+            background-color: #3f51b5;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-image: url('https://example.com/parking-background.jpg'); /* Placeholder image URL */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for contrast */
+            z-index: 1;
+        }
+
+        .block {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 20px;
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .block h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #3f51b5;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #303f9f;
+            transform: scale(1.05);
+        }
+
+        /* Additional styling for a better aesthetic */
+        footer {
+            background-color: #3f51b5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div class="container" id="landing-page">
+        <header>
+            <h1>Quick Park</h1>
+            <nav>
+                <ul>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#view">View Only</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="block" id="login">
+                <h2>Login</h2>
+                <button onclick="redirectToLoginSelection()">Login</button>
+            </div>
+            <div class="block" id="view">
+                <h2>View Only</h2>
+                <button onclick="viewOnly()">View Parking Spots</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <p>&copy; 2024 Quick Park | Designed for smooth and easy parking experience</p><br>
+        <button onclick="feedback()">FeedBack</button>
+    </footer>
+
+    <script>
+        // Redirect to login selection page (for choosing between admin or user)
+        function redirectToLoginSelection() {
+            window.location.href = 'login_selection.html';  // Redirects to login selection page
+        }
+
+        // Function for 'View Only'
+        function viewOnly() {
+            alert("Viewing Parking Spots...");
+            window.location.href = 'nearby_parking.html';  // Redirects to nearby parking page
+            // Add logic to show available parking spots
+        }
+        // Function for 'feedback'
+        function feedback() {
+            window.location.href = 'feedback.html';  // Redirects to feedback form page
+
+        }
+    </script>
+</body>
+</html>

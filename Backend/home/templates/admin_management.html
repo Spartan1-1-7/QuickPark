@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Parking Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .parking-lot {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .parking-spot {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .parking-spot.faulty {
+            background-color: #ff4c4c;
+            color: white;
+        }
+
+        .faulty-btn {
+            padding: 10px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background-color 0.3s;
+        }
+
+        .faulty-btn.disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Parking Management</h1>
+        <div class="parking-lot">
+            <!-- Example of 8 parking spots -->
+            <div class="parking-spot" id="spot1">
+                <h3>Spot 1</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot1')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot2">
+                <h3>Spot 2</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot2')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot3">
+                <h3>Spot 3</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot3')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot4">
+                <h3>Spot 4</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot4')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot5">
+                <h3>Spot 5</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot5')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot6">
+                <h3>Spot 6</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot6')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot7">
+                <h3>Spot 7</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot7')">Mark as Faulty</button>
+            </div>
+            <div class="parking-spot" id="spot8">
+                <h3>Spot 8</h3>
+                <button class="faulty-btn" onclick="toggleFaulty('spot8')">Mark as Faulty</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle a parking spot as faulty or available
+        function toggleFaulty(spotId) {
+            var spot = document.getElementById(spotId);
+            var button = spot.querySelector('.faulty-btn');
+
+            // If the spot is currently faulty, revert it to available
+            if (spot.classList.contains('faulty')) {
+                spot.classList.remove('faulty');
+                button.textContent = 'Mark as Faulty';
+                button.classList.remove('disabled');
+                button.disabled = false;
+            }
+            // Otherwise, mark it as faulty
+            else {
+                spot.classList.add('faulty');
+                button.textContent = 'Faulty - Not Available (Undo)';
+                button.classList.remove('disabled');
+            }
+
+            // You can add further logic here to store the status in a database or perform other actions
+        }
+    </script>
+</body>
+</html>

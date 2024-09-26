@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Spot Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff; /* Light blue background */
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the container */
+            width: 400px;
+            height: 400px;
+            border: 2px solid #1f4b99; /* Blue border */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border-radius: 10px; /* Rounded corners for container */
+        }
+
+        .info {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #1f4b99; /* Blue color for text */
+        }
+
+        .info span {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="parkingContainer">
+        <!-- Empty container with white background -->
+    </div>
+
+    <div class="info">
+        <p>Number of Filled Spots: <span>NA</span></p>
+        <p>Number of Empty Spots: <span>NA</span></p>
+    </div>
+
+</body>
+</html>
